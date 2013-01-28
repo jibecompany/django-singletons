@@ -12,8 +12,9 @@ class SingletonModel(models.Model):
     def delete(self, *args, **kwargs):
         pass
 
-    def get(self):
+    @classmethod
+    def get(cls):
         """Get the one and only object"""
-        return self.objects.get_or_create(pk=1)
+        return cls.objects.get_or_create(pk=1)
 
 
