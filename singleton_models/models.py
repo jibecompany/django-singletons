@@ -15,6 +15,6 @@ class SingletonModel(models.Model):
     @classmethod
     def get(cls):
         """Get the one and only object"""
-        return cls.objects.get_or_create(pk=1)
+        return cls.objects.get_or_create(pk=1)[0]
 
 
